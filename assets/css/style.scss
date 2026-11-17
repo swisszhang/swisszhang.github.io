@@ -161,6 +161,10 @@ p.colophon {
 
   .sep { color: $rule; padding: 0 6px; }
   .place { color: $muted; }
+
+  // Links here should read as part of the entry, not as a loud call to action.
+  a { color: inherit; border-bottom-color: rgba($accent, 0.3); }
+  a:hover, a:focus { color: $accent; border-bottom-color: $accent; }
 }
 
 .entry ul {
