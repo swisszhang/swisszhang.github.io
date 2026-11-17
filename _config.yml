@@ -1,3 +1,31 @@
+title: Zhijian (James) Zhang
+description: Software engineer building risk and real-time data platforms at eBay.
 theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+lang: en-US
+show_downloads: false
+
+author:
+  name: Zhijian (James) Zhang
+  location: Shanghai, China
+  email: swisszhang@outlook.com
+  linkedin: jameszhang1
+  github: swisszhang
+
+url: "https://swisszhang.github.io"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-relative-links
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE

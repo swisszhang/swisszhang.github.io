@@ -1,0 +1,306 @@
+---
+---
+
+// ---------------------------------------------------------------------------
+// Base theme (jekyll-theme-minimal) — keep the theme's look, refine the rest.
+// ---------------------------------------------------------------------------
+@import "{{ site.theme }}";
+
+// ---------------------------------------------------------------------------
+// Design tokens
+// ---------------------------------------------------------------------------
+$ink:        #1c1f23;
+$ink-soft:   #4a5158;
+$muted:      #7a8288;
+$rule:       #e3e6e9;
+$accent:     #14507d;
+
+// ---------------------------------------------------------------------------
+// Typography & rhythm
+// ---------------------------------------------------------------------------
+body {
+  font: 15px/1.62 "Noto Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $ink-soft;
+  background-color: #fff;
+  padding: 56px 40px 40px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { color: $ink; }
+
+h1 {
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+
+  a { color: $ink; border-bottom: 0; }
+  a:hover, a:focus { color: $accent; font-weight: inherit; }
+  .alias { font-weight: 400; color: $muted; }
+}
+
+h2 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $ink;
+  margin: 38px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $rule;
+}
+
+h3 { font-size: 16px; letter-spacing: -0.01em; margin-bottom: 2px; }
+h4 { font-size: 14px; }
+
+p, ul, ol { margin: 0 0 14px; }
+strong { color: $ink; font-weight: 600; }
+em { color: $muted; font-style: normal; }
+
+a {
+  color: $accent;
+  text-decoration: none;
+  border-bottom: 1px solid rgba($accent, 0.25);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a:hover, a:focus { color: #0d3d60; font-weight: inherit; border-bottom-color: $accent; }
+
+ul { padding-left: 18px; }
+li { margin-bottom: 5px; }
+li::marker { color: $muted; }
+
+hr { border: 0; border-top: 1px solid $rule; margin: 32px 0; }
+
+// ---------------------------------------------------------------------------
+// Layout: fixed identity column + wide reading column
+// ---------------------------------------------------------------------------
+.wrapper { width: 960px; }
+header { width: 236px; }
+
+section {
+  width: 640px;
+  max-width: 640px;
+}
+
+// ---------------------------------------------------------------------------
+// Sidebar
+// ---------------------------------------------------------------------------
+.site-headline,
+header p.headline {
+  color: $muted;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+}
+
+ul.contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  color: $muted;
+
+  li { margin: 0; }
+  a { color: $ink-soft; border-bottom-color: transparent; }
+  a:hover, a:focus { color: $accent; border-bottom-color: $accent; }
+}
+
+header hr { margin: 22px 0; }
+
+footer { width: 236px; }
+p.colophon {
+  font-size: 11px;
+  line-height: 1.7;
+  color: $muted;
+  margin: 0;
+  a { color: $muted; border-bottom-color: transparent; }
+  a:hover, a:focus { color: $accent; border-bottom-color: $accent; }
+}
+
+// ---------------------------------------------------------------------------
+// Resume blocks
+// ---------------------------------------------------------------------------
+.lede {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $ink-soft;
+  margin-bottom: 8px;
+}
+
+.entry {
+  margin-bottom: 26px;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+
+  h3 { margin: 0; }
+}
+
+.entry-date {
+  flex: 0 0 auto;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: $muted;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-org {
+  color: $ink-soft;
+  font-size: 13.5px;
+  margin: 1px 0 9px;
+
+  .sep { color: $rule; padding: 0 6px; }
+  .place { color: $muted; }
+}
+
+.entry ul {
+  margin-bottom: 0;
+  padding-left: 16px;
+
+  li { margin-bottom: 4px; }
+}
+
+// Compact two-column set for skills / languages
+dl.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  row-gap: 7px;
+  column-gap: 18px;
+  font-size: 14px;
+
+  dt {
+    color: $muted;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-top: 3px;
+  }
+
+  dd { margin: 0; color: $ink-soft; }
+}
+
+// Tag pills
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 2px 9px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: $ink-soft;
+    background: #f6f7f8;
+    border: 1px solid $rule;
+    border-radius: 3px;
+    list-style: none;
+  }
+}
+
+ul.tags { padding-left: 0; }
+
+// ---------------------------------------------------------------------------
+// Responsive
+// ---------------------------------------------------------------------------
+@media print, screen and (max-width: 960px) {
+  body { padding: 32px 22px; }
+
+  .wrapper { width: auto; }
+  header, section, footer { width: auto; max-width: 100%; }
+
+  header {
+    margin-bottom: 28px;
+    padding-right: 0;
+  }
+
+  header, section, footer { padding-right: 0; }
+  ul.contact { line-height: 1.7; }
+}
+
+@media screen and (max-width: 600px) {
+  body { padding: 24px 16px; font-size: 14.5px; }
+  h1 { font-size: 23px; }
+  dl.facts { grid-template-columns: 1fr; row-gap: 2px; }
+  dl.facts dt { padding-top: 8px; }
+  .entry-head { flex-direction: column; gap: 0; }
+  .entry-date { order: -1; }
+}
+
+// ---------------------------------------------------------------------------
+// Print → clean single-page PDF via the browser
+// ---------------------------------------------------------------------------
+@media print {
+  @page { margin: 14mm 15mm; }
+
+  body {
+    padding: 0;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .wrapper { width: auto; }
+
+  header, section, footer {
+    position: static;
+    float: none;
+    width: auto;
+    max-width: none;
+  }
+
+  header {
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  // The theme draws a top/bottom rule on `section` in print — drop it, the
+  // header rule is the only divider this layout needs.
+  section {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 { font-size: 20pt; margin-bottom: 4px; }
+  h2 { font-size: 9pt; margin: 15px 0 8px; break-after: avoid; page-break-after: avoid; }
+  h3 { font-size: 11pt; }
+
+  .site-headline,
+  header p.headline { margin-bottom: 8px; font-size: 9.5pt; }
+
+  ul.contact { font-size: 9pt; line-height: 1.55; }
+
+  a { color: #000; border-bottom: 0; }
+
+  .lede { font-size: 10.5pt; margin: 10px 0 4px; }
+  .entry { margin-bottom: 11px; break-inside: auto; }
+
+  .entry-head,
+  .entry-org { break-after: avoid; page-break-after: avoid; }
+
+  .entry-org { font-size: 9.5pt; }
+  .entry-date { font-size: 9pt; }
+
+  dl.facts { font-size: 9.5pt; }
+  dl.facts dt { font-size: 8pt; padding-top: 0; }
+
+  .tags li { background: none; }
+
+  footer { display: none; }
+}

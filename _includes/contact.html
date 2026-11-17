@@ -1,0 +1,14 @@
+<ul class="contact">
+  {%- if site.author.location %}
+  <li>{{ site.author.location }}</li>
+  {%- endif %}
+  {%- if site.author.email %}
+  <li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+  {%- endif %}
+  {%- if site.author.linkedin %}
+  <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a></li>
+  {%- endif %}
+  {%- if site.author.github %}
+  <li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>
+  {%- endif %}
+</ul>
